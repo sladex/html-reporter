@@ -21,15 +21,31 @@
     display: inline;
 }
 
+.select_type_view {
+    height: 22px;
+    margin-right: 4px;
+}
+
 .button {
-    margin-left: 3px;
+    margin-right: 4px;
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 2px;
+    line-height: 10px;
+    padding: 5px;
     outline: 0;
+    box-sizing: content-box;
 }
 
 .button:hover {
+    border-color: #555;
+}
+
+.button:disabled {
+    background: #ccc;
+}
+
+.button:hover:enabled {
     border-color: #555;
 }
 
@@ -41,6 +57,10 @@
 .button_checked {
     background: #ffeba0;
     border-color: #cebe7d;
+}
+
+.button_type_action {
+    background: #ffde5a;
 }
 
 .image-box {
@@ -91,12 +111,21 @@
     user-select: text;
 }
 
-.section__title:before, .meta-info__switcher:before {
+.section__title:before,
+.meta-info__switcher:before {
     display: inline-block;
     margin-right: 2px;
     vertical-align: middle;
     content: '\25bc';
     color: black;
+}
+
+.section__title:hover {
+    color: #2d3e50;
+}
+
+.section__title_skipped:hover {
+    color: #ccc;
 }
 
 .section__title_skipped:before {
@@ -112,14 +141,6 @@
 }
 
 .section_status_skip > .section__title {
-    color: #ccc;
-}
-
-.section__title:hover {
-    color: #2d3e50;
-}
-
-.section__title_skipped:hover {
     color: #ccc;
 }
 
@@ -299,7 +320,7 @@ a:active {
     outline: 0;
     line-height: 14px;
     margin-left: 3px;
-    padding: 2px 5px;
+    padding: 3px 5px;
     border: 1px solid #ccc;
     border-radius: 2px;
 }
