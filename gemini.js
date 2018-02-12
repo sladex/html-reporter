@@ -17,13 +17,12 @@ module.exports = (gemini, opts) => {
         return;
     }
 
-    reportBuilder = ReportBuilderFactory.create('gemini', gemini.config, pluginConfig);
-
     gemini.on(gemini.events.CLI, (commander) => {
-        gui(commander, pluginConfig);
+        gui(commander, gemini, pluginConfig);
     });
 
     // TODO: do not generate report on "gemini gui" command
+    reportBuilder = ReportBuilderFactory.create('gemini', gemini.config, pluginConfig);
     const generateReportPromise = Promise
         .all([
             prepareData(gemini),
