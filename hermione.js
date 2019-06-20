@@ -1,6 +1,6 @@
 'use strict';
 
-const os = require('os');
+//const os = require('os');
 const PQueue = require('p-queue');
 
 const PluginAdapter = require('./lib/plugin-adapter');
@@ -67,7 +67,7 @@ function prepareImages(hermione, pluginConfig, reportBuilder) {
     }
 
     return new Promise((resolve, reject) => {
-        const queue = new PQueue({concurrency: os.cpus().length});
+        const queue = new PQueue({concurrency: Infinity});
         const promises = [];
 
         hermione.on(hermione.events.TEST_PASS, testResult => {
